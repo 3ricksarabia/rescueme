@@ -15,6 +15,7 @@ const Map: FC<MapsProps> = ({ center, zoom }) => {
       const map = new window.google.maps.Map(ref.current, {
         center,
         zoom,
+        disableDefaultUI: true,
       });
 
       const marker = new window.google.maps.Marker({
@@ -33,7 +34,7 @@ const Map: FC<MapsProps> = ({ center, zoom }) => {
     }
   }, [center, ref, zoom]);
 
-  return <div ref={ref} id="map" style={{ width: '100vw', height: '100vh' }} />;
+  return <div ref={ref} id="map" style={{ width: '100vw', height: '90vh' }} />;
 };
 
 export { Map };

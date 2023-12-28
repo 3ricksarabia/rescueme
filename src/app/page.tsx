@@ -1,7 +1,9 @@
 'use client';
 
-import React, { useEffect, useState, ReactElement } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Wrapper } from '@googlemaps/react-wrapper';
+import { Box } from '@/components/ui/box';
+import { Button } from '@/components/ui/button';
 import { Map } from '@/components/ui/map';
 
 const LocationComponent = () => {
@@ -27,6 +29,11 @@ const LocationComponent = () => {
   return (
     <Wrapper apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string}>
       <Map center={{ lat: latitude, lng: longitude }} zoom={17} />
+      <Box className="h-[10vh]">
+        <Button className="text-xl w-full h-full uppercase">
+          Confirmar ubicación 🐶
+        </Button>
+      </Box>
     </Wrapper>
   );
 };
